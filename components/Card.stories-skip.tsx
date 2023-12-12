@@ -21,7 +21,6 @@ export const Error: Story = {
   }
 }
 
-
 export const Beyonce: Story = {
   args: {
     state: 'loaded',

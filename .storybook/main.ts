@@ -4,8 +4,7 @@ const config: StorybookConfig = {
   stories: ['../components/**/*.mdx', '../components/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
+    { name: '@storybook/addon-essentials', options: { actions: false, controls: false } },
     'msw-storybook-addon',
     'storybook-addon-module-mock',
   ],

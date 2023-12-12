@@ -19,9 +19,6 @@ devDependencies:
   '@storybook/addon-essentials':
     specifier: ^8.0.0-alpha.3
     version: 8.0.0-alpha.3(@types/react@18.2.43)(react-dom@18.2.0)(react@18.2.0)
-  '@storybook/addon-interactions':
-    specifier: ^8.0.0-alpha.3
-    version: 8.0.0-alpha.3(react-dom@18.2.0)(react@18.2.0)
   '@storybook/addon-links':
     specifier: ^8.0.0-alpha.3
     version: 8.0.0-alpha.3(react@18.2.0)
@@ -2117,20 +2114,6 @@ packages:
     resolution: {integrity: sha512-ldeJjDBRzgOS/XxxEXP2DnFsh1Q24POE0Nk7Ow8iAWW45Q/9r53jkT4UrVZxVl3lI+VwY66xTZQ0Xlf8jslzNg==, tarball: https://registry.npmjs.org/@storybook/addon-highlight/-/addon-highlight-8.0.0-alpha.3.tgz}
     dependencies:
       '@storybook/global': 5.0.0
-    dev: true
-
-  /@storybook/addon-interactions@8.0.0-alpha.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-MlBfRAbSRF4pjcKdwmHOW5Wwt50gP3AXcOmzMe1vxmypgrnELSM9hK/e/HCAMJApuc1gJZXwYGlNJUHVRxusrA==, tarball: https://registry.npmjs.org/@storybook/addon-interactions/-/addon-interactions-8.0.0-alpha.3.tgz}
-    dependencies:
-      '@storybook/global': 5.0.0
-      '@storybook/icons': 1.2.3(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/types': 8.0.0-alpha.3
-      jest-mock: 27.5.1
-      polished: 4.2.2
-      ts-dedent: 2.2.0
-    transitivePeerDependencies:
-      - react
-      - react-dom
     dev: true
 
   /@storybook/addon-links@8.0.0-alpha.3(react@18.2.0):
