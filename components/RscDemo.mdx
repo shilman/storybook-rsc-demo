@@ -1,0 +1,65 @@
+import { Meta, Canvas, Source } from '@storybook/blocks';
+import ApiCardCode from './ApiCard.tsx?raw';
+import DbCardCode from './DbCard.tsx?raw';
+import * as ApiCardStories from './ApiCard.stories';
+import * as DbCardStories from './DbCard.stories';
+
+# Storybook RSC demo
+
+This is a demo of how to use [Storybook](https://storybook.js.org/) with [React Server Components (RSCs)](https://nextjs.org/docs/app/building-your-application/rendering/server-components) in [Next.js](https://nextjs.org/). The demo consists of a single presentational component, `Card`, which is used in two different ways:
+1. Embedded in an RSC, `ApiCard`, which fetches data asynchronously from a REST API.
+2. Embedded in an RSC, `DbCard`, which fetches data asynchronously from a database.
+
+## ApiCard
+
+`ApiCard` is an RSC that fetches data from a REST API:
+
+<Source code={`
+import { ComponentProps } from 'react';
+import { Card } from './Card';
+
+export async function ApiCard({ id }: { id: number }) {
+  let props: ComponentProps<typeof Card>;
+  try {
+    const res = await fetch(\`https://myapi.com/users/\${id}\`);
+    const contact = await res.json();
+    props = { state: 'loaded', contact };
+  } catch (e) {
+    props = { state: 'error' };
+  }
+  return <Card {...props} />;
+}
+`} />
+
+To mock the Rest API, we use the [`msw-storybook-addon`](https://storybook.js.org/addons/msw-storybook-addon), a thin wrapper around [`msw`](https://mswjs.io/).
+
+<Canvas of={ApiCardStories.Success} sourceState='shown' />
+
+It is not yet possible to show multiple MSW stories in the same docs page, so to see the other stories, you'll have to [navigate to them manually](?path=/story/apicard--success).
+
+## DbCard
+
+`DbCard` is an RSC fetches data from a database:
+
+<Source code={`
+import { ComponentProps } from 'react';
+import { Card } from './Card';
+import { findById } from './db';
+
+export async function DbCard({ id }: {id: number}) {
+  let props: ComponentProps<typeof Card>;
+  try {
+    const contact = await findById(id);
+    props = { state: 'loaded', contact };
+  } catch (e) {
+    props = { state: 'error' };
+  }
+  return <Card {...props} />;
+}
+`} />
+
+To mock the database, we use [`storybook-addon-module-mock`](https://storybook.js.org/addons/storybook-addon-module-mock/):
+
+<Canvas of={DbCardStories.Error} sourceState='shown' />
+
+See more [DbCard stories](?path=/story/dbcard--success).

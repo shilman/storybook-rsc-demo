@@ -6,17 +6,37 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@storybook/addon-essentials": "^8.0.0-alpha.3",
+    "@storybook/addon-interactions": "^8.0.0-alpha.3",
+    "@storybook/addon-links": "^8.0.0-alpha.3",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/addons": "7.6.0-beta.2",
+    "@storybook/api": "7.6.0-beta.2",
+    "@storybook/blocks": "^8.0.0-alpha.3",
+    "@storybook/jest": "0.2.3-next.0",
+    "@storybook/nextjs": "^8.0.0-alpha.3",
+    "@storybook/react": "^8.0.0-alpha.3",
+    "@storybook/test": "^8.0.0-alpha.3",
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "@types/react-dom": "^18",
+    "msw": "1",
+    "msw-storybook-addon": "^1.10.0",
+    "storybook": "^8.0.0-alpha.3",
+    "storybook-addon-module-mock": "^1.1.2",
+    "typescript": "^5"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
