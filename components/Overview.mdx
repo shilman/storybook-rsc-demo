@@ -7,8 +7,11 @@ import * as DbCardStories from './DbCard.stories';
 # Storybook RSC demo
 
 This is a demo of how to use [Storybook](https://storybook.js.org/) with [React Server Components (RSCs)](https://nextjs.org/docs/app/building-your-application/rendering/server-components) in [Next.js](https://nextjs.org/). The demo consists of a single presentational component, `Card`, which is used in two different ways:
+
 1. Embedded in an RSC, `ApiCard`, which fetches data asynchronously from a REST API.
 2. Embedded in an RSC, `DbCard`, which fetches data asynchronously from a database.
+
+The source code of this demo available on Github at [shilman/storybook-rsc-demo](https://github.com/shilman/storybook-rsc-demo/).
 
 ## ApiCard
 
@@ -31,7 +34,7 @@ export async function ApiCard({ id }: { id: number }) {
 }
 `} />
 
-To mock the Rest API, we use the [`msw-storybook-addon`](https://storybook.js.org/addons/msw-storybook-addon), a thin wrapper around [`msw`](https://mswjs.io/).
+To mock the Rest API, we use the [`msw-storybook-addon`](https://storybook.js.org/addons/msw-storybook-addon), a thin wrapper around [`msw`](https://mswjs.io/). Note that this is using `2.0.0--canary.122.06f0c92.0` of the addon, which is compatible with [MSW 2.x](https://mswjs.io/blog/introducing-msw-2.0/).
 
 <Canvas of={ApiCardStories.Success} sourceState='shown' />
 

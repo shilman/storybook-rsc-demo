@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react';
 import { mswLoader } from 'msw-storybook-addon'
-import { rest } from 'msw';
+import { http, HttpResponse } from 'msw'
 
 import { ApiCard } from './ApiCard';
 import contacts from './contacts.json';
@@ -23,9 +23,7 @@ export const Success: Story = {
   parameters: {
     msw: {
       handlers: [
-        rest.get('https://myapi.com/*', (req, res, ctx) => {
-          return res(ctx.json(contacts.beyonce))
-        })
+        http.get('https://myapi.com/*', () => HttpResponse.json(contacts.beyonce))
       ]
     }
   }
@@ -36,9 +34,7 @@ export const Error: Story = {
   parameters: {
     msw: {
       handlers: [
-        rest.get('https://myapi.com/*', (req, res, ctx) => {
-          return res(ctx.status(500))
-        })
+        http.get('https://myapi.com/*', () => HttpResponse.error())
       ]
     }
   }
