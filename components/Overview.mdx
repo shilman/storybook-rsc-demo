@@ -34,7 +34,9 @@ export async function ApiCard({ id }: { id: number }) {
 }
 `} />
 
-To mock the Rest API, we use the [`msw-storybook-addon`](https://storybook.js.org/addons/msw-storybook-addon), a thin wrapper around [`msw`](https://mswjs.io/). Note that this is using `2.0.0--canary.122.06f0c92.0` of the addon, which is compatible with [MSW 2.x](https://mswjs.io/blog/introducing-msw-2.0/).
+### API mocking with MSW
+
+To mock the Rest API, we use the [`msw-storybook-addon`](https://storybook.js.org/addons/msw-storybook-addon), a thin wrapper around [Mock Service Worker (MSW)](https://mswjs.io/). Note that this is using `2.0.0--canary.122.06f0c92.0` of the addon, which is compatible with [MSW 2.x](https://mswjs.io/blog/introducing-msw-2.0/).
 
 <Canvas of={ApiCardStories.Success} sourceState='shown' />
 
@@ -42,7 +44,7 @@ It is not yet possible to show multiple MSW stories in the same docs page, so to
 
 ## DbCard
 
-`DbCard` is an RSC fetches data from a database:
+`DbCard` is an RSC that fetches data asynchronously from a database:
 
 <Source code={`
 import { ComponentProps } from 'react';
@@ -61,7 +63,9 @@ export async function DbCard({ id }: {id: number}) {
 }
 `} />
 
-To mock the database, we use [`storybook-addon-module-mock`](https://storybook.js.org/addons/storybook-addon-module-mock/):
+### Module mocking
+
+To mock the database, we use [`storybook-addon-module-mock`](https://storybook.js.org/addons/storybook-addon-module-mock/). We plan to improve the ergonomics of module mocking in a future version of Storybook.
 
 <Canvas of={DbCardStories.Error} sourceState='shown' />
 
