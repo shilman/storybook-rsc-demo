@@ -14,7 +14,7 @@ const config: StorybookConfig = {
     options: {},
   },
   features: {
-    experimentalNextRSC: true,
+    experimentalRSC: true,
   },
 };
 export default config;
