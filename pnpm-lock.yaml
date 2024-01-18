@@ -25,9 +25,6 @@ devDependencies:
   '@storybook/addon-links':
     specifier: 8.0.0-alpha.11
     version: 8.0.0-alpha.11(react@18.2.0)
-  '@storybook/addon-module-mock-fork':
-    specifier: ^1.1.4
-    version: 1.1.4(@types/react@18.2.43)(react@18.2.0)
   '@storybook/blocks':
     specifier: 8.0.0-alpha.11
     version: 8.0.0-alpha.11(@types/react@18.2.43)(react-dom@18.2.0)(react@18.2.0)
@@ -61,6 +58,9 @@ devDependencies:
   storybook:
     specifier: 8.0.0-alpha.11
     version: 8.0.0-alpha.11(react-dom@18.2.0)(react@18.2.0)
+  storybook-addon-module-mock:
+    specifier: ^1.1.5
+    version: 1.1.5(@types/react@18.2.43)(react@18.2.0)
   typescript:
     specifier: ^5
     version: 5.3.3
@@ -2072,16 +2072,6 @@ packages:
     transitivePeerDependencies:
       - react
       - react-dom
-    dev: true
-
-  /@storybook/addon-module-mock-fork@1.1.4(@types/react@18.2.43)(react@18.2.0):
-    resolution: {integrity: sha512-5FwuzGKA+MhMHo5Jabs4OhxKR+lN4JVhAv6jGQvKQg9GsGmSo96UHV47oTAZIZApkVpF8L/2fLJp1/yNsptEtQ==, tarball: https://registry.npmjs.org/@storybook/addon-module-mock-fork/-/addon-module-mock-fork-1.1.4.tgz}
-    dependencies:
-      minimatch: 9.0.3
-      react-json-tree: 0.18.0(@types/react@18.2.43)(react@18.2.0)
-    transitivePeerDependencies:
-      - '@types/react'
-      - react
     dev: true
 
   /@storybook/addon-outline@8.0.0-alpha.11(react-dom@18.2.0)(react@18.2.0):
@@ -7936,6 +7926,16 @@ packages:
 
   /store2@2.14.2:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==, tarball: https://registry.npmjs.org/store2/-/store2-2.14.2.tgz}
+    dev: true
+
+  /storybook-addon-module-mock@1.1.5(@types/react@18.2.43)(react@18.2.0):
+    resolution: {integrity: sha512-p6C0Y4zKPCvAu7buBUnjnvMfWrAzFd55T3cF0QHVFNPNXJOS/A0o9KRFzAEJymA3ToNBzEN9hkWQ3XcXJ2tM/w==, tarball: https://registry.npmjs.org/storybook-addon-module-mock/-/storybook-addon-module-mock-1.1.5.tgz}
+    dependencies:
+      minimatch: 9.0.3
+      react-json-tree: 0.18.0(@types/react@18.2.43)(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/react'
+      - react
     dev: true
 
   /storybook@8.0.0-alpha.11(react-dom@18.2.0)(react@18.2.0):

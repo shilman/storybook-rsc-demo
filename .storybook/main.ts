@@ -6,7 +6,7 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     { name: '@storybook/addon-essentials', options: { actions: false, controls: false } },
     'msw-storybook-addon',
-    '@storybook/addon-module-mock-fork',
+    'storybook-addon-module-mock',
   ],
   staticDirs: ['../public'],
   framework: {

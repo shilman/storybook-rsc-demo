@@ -31,7 +31,7 @@
     "msw": "2",
     "msw-storybook-addon": "2.0.0--canary.122.06f0c92.0",
     "storybook": "8.0.0-alpha.11",
-    "@storybook/addon-module-mock-fork": "^1.1.4",
+    "storybook-addon-module-mock": "^1.1.5",
     "typescript": "^5"
   },
   "msw": {

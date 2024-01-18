@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { createMock } from '@storybook/addon-module-mock-fork';
+import { createMock } from 'storybook-addon-module-mock';
 
 import { DbCard } from './DbCard';
 import * as db from './db';
